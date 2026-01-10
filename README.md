@@ -44,13 +44,23 @@ User Query → Query Embedding → Metadata Filter → Retrieval → Response
 
 See [`keystone-deploy`](https://github.com/getkeystone/keystone-deploy) for deployment instructions.
 
-## Status
+## Development Status
 
-🚧 **Active Development** — Production-ready Q1 2025
+🚧 **Active Development**
+- MVP demo: February 2026
+- Production-ready: Q2 2026
 
 ## License
 
-Source-available for evaluation and non-commercial use.
+Keystone Core is licensed under the [Business Source License 1.1](LICENSE).
 
-Commercial use requires a license agreement with Keystone AI.  
-Contact: arnaldo@getkeystone.ai
+**Non-production use is free:**
+- Development, testing, and evaluation environments only
+- Up to 100 internal users
+
+**Production use requires a commercial license.**
+
+**Change Date:** 2030-01-01  
+After this date, the license automatically converts to Apache License 2.0.
+
+For commercial licensing: arnaldo@getkeystone.ai
