@@ -1,14 +1,14 @@
-Keystone Source-Available License v1.0
+Business Source License 1.1
 
-Copyright (c) 2026 Keystone AI
+Parameters:
 
-Permission is hereby granted to view, download, and modify this software
-for personal, educational, and non-commercial internal evaluation purposes only.
+Licensor:             Keystone AI Inc.
+Licensed Work:        Keystone Core
+                      The Licensed Work is (c) 2025 Keystone AI Inc.
+Additional Use Grant: You may use the Licensed Work for non-production
+                      purposes, including development, testing, and
+                      evaluation environments with up to 100 users.
+Change Date:          2029-01-01
+Change License:       Apache License 2.0
 
-Commercial use, production deployment, SaaS offerings, or distribution of this
-software in any form requires a separate commercial license agreement
-with Keystone AI.
-
-This software is provided "AS IS", without warranty of any kind.
-
-Contact: arnaldo@getkeystone.ai
+For commercial licensing: arnaldo@getkeystone.ai
