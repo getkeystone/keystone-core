@@ -1,44 +1,50 @@
 # Keystone Core
 
-RAG engine for on-premise knowledge retrieval with permission-aware vector search.
+Core retrieval and ingestion engine for on-prem knowledge systems with permission-aware retrieval.
+
+Runs fully on customer infrastructure. No external API calls. Air-gap compatible.
 
 ## What This Does
 
-**Ingestion Pipeline:**
+### Ingestion Pipeline
 - Connects to source systems (SharePoint, file shares, databases)
 - Extracts documents with metadata and ACL information
 - Chunks content preserving semantic boundaries
-- Generates embeddings (BGE-large-en-v1.5)
-- Stores vectors with permission metadata in Qdrant
+- Generates embeddings
+- Stores vectors with permission metadata in the configured vector backend (demo defaults to Qdrant)
 
-**Query Pipeline:**
+### Query Pipeline
 - Receives user query with identity context
 - Generates query embedding
 - Performs metadata-filtered vector search (permission-aware)
-- Retrieves only chunks user is authorized to see
-- Returns citations with source document lineage
+- Retrieves only chunks the user is authorized to see
+- Returns citations with source lineage (document and chunk references)
 
-**Key Features:**
-- Zero raw-text storage in vector DB (hash-based references)
-- Query-time permission filtering
-- Multi-source ingestion with unified metadata schema
-- Deterministic chunk IDs for audit traceability
+## Key Features
+
+- Query-time permission filtering (enforced at retrieval, not by trusting the LLM)
+- Multi-source ingestion with a unified metadata schema
+- Deterministic chunk identifiers for traceability
+- Citation generation with document lineage
+- Designed for fail-closed behavior when evidence is insufficient
 
 ## Architecture
+
 ```
-Source Systems → Ingestion → Chunking → Embedding → Qdrant
-                                                        ↓
+Source Systems → Ingestion → Chunking → Embedding → Vector Backend
+↓
 User Query → Query Embedding → Metadata Filter → Retrieval → Response
 ```
 
+
 ## Technology Stack
 
-- **Python 3.11+** (async/await throughout)
-- **FastAPI** (API layer)
-- **Ollama** (local LLM inference)
-- **Qdrant** (vector storage)
-- **PostgreSQL** (permissions, sync state)
-- **Microsoft Graph API** (SharePoint integration)
+- Python 3.11+ (async/await throughout)
+- FastAPI (API layer)
+- Ollama (local LLM inference)
+- Vector search backend (Qdrant in demo)
+- PostgreSQL (permissions, sync state, audit references)
+- Microsoft Graph API (SharePoint integration)
 
 ## Getting Started
 
@@ -48,7 +54,7 @@ See [`keystone-deploy`](https://github.com/getkeystone/keystone-deploy) for depl
 
 🚧 Active Development
 
-- Current milestone: single-machine governed RAG proof (KDAT-001A)
+- Current milestone: single-machine governed retrieval proof (KDAT-001A)
 - Next: production hardening and multi-node deployment patterns
 
 ## License
