@@ -46,17 +46,10 @@ See [`keystone-deploy`](https://github.com/getkeystone/keystone-deploy) for depl
 
 ## Development Status
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-🚧 **Active Development**
-- MVP demo: February 2026
-- Production-ready: Q2 2026
-=======
-🚧 **Active Development** — Production-ready Q1 2026
->>>>>>> Stashed changes
-=======
-🚧 **Active Development** — Production-ready Q1 2026
->>>>>>> Stashed changes
+🚧 Active Development
+
+- Current milestone: single-machine governed RAG proof (KDAT-001A)
+- Next: production hardening and multi-node deployment patterns
 
 ## License
 
